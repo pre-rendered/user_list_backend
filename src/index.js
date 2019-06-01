@@ -26,7 +26,7 @@ router.get('/users', (req, res) => {
         zipcode: 25755
       },
       {
-        id: 2,
+        id: 3,
         name: 'Justin McElroy',
         email: 'justin.mcelroy@maximumfun.org',
         birthday: 'November 8, 1980',
