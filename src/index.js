@@ -23,6 +23,10 @@ router.post('/users', jsonParser, (req, res) => {
 })
 
 router.delete('/users/:id', (req, res) => {
+  const userFound = users.filter(user => user.id === parseInt(req.params.id, 10)).length > 0
+  if (!userFound) {
+    return res.status(404).send({ message: 'User not found.' })
+  }
   users = users.filter(user => user.id !== parseInt(req.params.id, 10))
   res.status(204).send()
 })
