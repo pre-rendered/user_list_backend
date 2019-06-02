@@ -19,12 +19,12 @@ router.get('/users', (req, res) => {
 
 router.post('/users', jsonParser, (req, res) => {
   users.push(req.body)
-  res.json(users)
+  res.status(201).json(req.body)
 })
 
 router.delete('/users/:id', (req, res) => {
   users = users.filter(user => user.id !== parseInt(req.params.id, 10))
-  res.json(users)
+  res.status(204).send()
 })
 
 app.listen(port);
